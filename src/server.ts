@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import {filterImageFromURL, deleteLocalFiles} from './util/util';
+import { FilteredImageRouter } from './controllers/filteredimage/filteredimage.router';
 
 (async () => {
 
@@ -28,6 +28,8 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
 
   /**************************************************************************** */
+
+  app.use('/filteredimage', FilteredImageRouter);
 
   //! END @TODO1
   
