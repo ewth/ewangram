@@ -6,6 +6,9 @@ const router: Router = Router();
 
 router.get('/', async (req: Request, res: Response) => {
     // Pull image_url out of query string
+    if (!req.query.image_url) {
+        return res.status(400).send("No image URL.");
+    }
     let imageUrl: string = req.query.image_url.toString();
     
     // Check that image URL is valid
