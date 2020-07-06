@@ -6,7 +6,7 @@ const router: Router = Router();
 
 router.get('/', async (req: Request, res: Response) => {
     // Pull image_url out of query string
-    let imageUrl: string = req.query.image_url;
+    let imageUrl: string = req.query.image_url.toString();
     
     // Check that image URL is valid
     if (!imageUrl || !validUrl.isUri(imageUrl)) {
